@@ -6,26 +6,29 @@ import emailjs from "@emailjs/browser";
 type Props = {};
 
 const Contact = (props: Props) => {
-  const form = useRef();
+  const form = useRef<HTMLFormElement | null>(null);
+
 
   const sendEmail = (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_zk3pwga",
-        "template_b4jtgcg",
-        form.current,
-        "Hrk3myk-4GMixpPl7"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_zk3pwga",
+          "template_b4jtgcg",
+          form.current,
+          "Hrk3myk-4GMixpPl7"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
   };
 
   return (
