@@ -1,5 +1,6 @@
 import ApartHome from "../components/MainBody/component/ApartHome";
 import SubBody from "../components/MainBody/component/SubBody";
+import GoUp from "../components/GoUp";
 
 const page = () => {
   return (
@@ -32,6 +33,9 @@ const page = () => {
           details="Invest in your team's professional development with Burak Solutions certification programs. Our training modules are designed to enhance skills, knowledge, and proficiency in the latest technologies and industry best practices. Equip your workforce with the certifications they need to stay ahead in today's competitive IT landscape."
           details2="Experience unparalleled support with Burak Solutions' managed services. Our proactive approach to IT management ensures your systems run smoothly, minimizing downtime and maximizing productivity. From routine maintenance to real-time monitoring, we provide comprehensive solutions tailored to your unique business needs."
         />
+      </div>
+      <div className="absolute sm:top-[235rem] top-[275rem] right-5 sm:right-8 w-min scroll-smooth">
+        <GoUp />
       </div>
     </div>
   );

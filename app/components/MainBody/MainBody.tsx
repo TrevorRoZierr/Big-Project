@@ -1,8 +1,9 @@
 import SubBody from "./component/SubBody";
+import GoUp from "../GoUp";
 
 const MainBody = () => {
   return (
-    <div className="w-full sm:w-full h-min sm:h-min flex justify-center item-center flex-col sm:mt-[140px] mt-[100px]">
+    <div className="w-full sm:w-full h-min sm:h-min flex justify-center item-center flex-col sm:mt-[140px] mt-[100px] scroll-smooth">
       <SubBody
         firstCap=""
         firstWord=""
@@ -39,6 +40,9 @@ const MainBody = () => {
         alt="Our Vision"
         details="In the fast paced world of technology, adaptability is crucial. We stay at the forefront of industry developments, embracing the latest trends and technologies to provide you with forward-thinking solutions."
       />
+      <div className="absolute sm:top-[250rem] top-[186rem] right-5 sm:right-8 w-min scroll-smooth">
+        <GoUp />
+      </div>
     </div>
   );
 };

@@ -2,12 +2,12 @@
 
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import GoUp from "../components/GoUp";
 
 type Props = {};
 
 const Contact = (props: Props) => {
   const form = useRef<HTMLFormElement | null>(null);
-
 
   const sendEmail = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -50,7 +50,7 @@ const Contact = (props: Props) => {
             type="text"
             placeholder="Name:"
             name="user_name"
-            className="sm:my-5 my-3 border-2 border-black sm:p-2 p-1 rounded"
+            className="sm:my-5 my-3 border-2 border-black sm:p-2 p-2 rounded placeholder-black"
             required
             autoComplete="off"
           />
@@ -61,7 +61,7 @@ const Contact = (props: Props) => {
             name="user_email"
             required
             autoComplete="off"
-            className="sm:my-5 my-3 border-2 border-black sm:p-2 p-1 rounded"
+            className="sm:my-5 my-3 border-2 border-black sm:p-2 p-2 rounded placeholder-black"
           />
           <br></br>
           <input
@@ -70,7 +70,7 @@ const Contact = (props: Props) => {
             name="subject"
             required
             autoComplete="off"
-            className="sm:my-5 my-3 border-2 border-black sm:p-2 p-1 rounded"
+            className="sm:my-5 my-3 border-2 border-black sm:p-2 p-2 rounded placeholder-black"
           />
           <br></br>
           <textarea
@@ -80,7 +80,7 @@ const Contact = (props: Props) => {
             autoComplete="off"
             cols={30}
             rows={10}
-            className="my-5 border-2 border-black sm:p-3 p-2 rounded"
+            className="my-5 border-2 border-black sm:p-3 p-3 rounded placeholder-black"
           ></textarea>
           <br></br>
           <div className="flex justify-center items-center flex-col">
@@ -92,6 +92,9 @@ const Contact = (props: Props) => {
             </button>
           </div>
         </form>
+      </div>
+      <div className="absolute sm:top-[100rem] top-[75rem] right-5 sm:right-8 w-min scroll-smooth">
+        <GoUp />
       </div>
     </div>
   );
